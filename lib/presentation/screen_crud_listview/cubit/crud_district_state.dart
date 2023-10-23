@@ -1,20 +1,30 @@
-import 'package:flutter_test_project/domain/model_district.dart';
-import 'package:flutter_test_project/domain/model_province.dart';
+import 'package:flutter_test_project/domain/model_list_province_district.dart';
 
 class CRUDDistrictState {
-  final List<District>? district;
-  final List<Province>? pronvince;
+  final List<ProvinceDistrict>? listProvinceDistrict;
+  final List<String>? listProvinceName;
+  final String? district;
+  final String? flagActive;
+  final String? province;
   CRUDDistrictState({
+    this.listProvinceDistrict,
     this.district,
-    this.pronvince,
+    this.flagActive,
+    this.listProvinceName,
+    this.province,
   });
-  CRUDDistrictState copyWith({
-    List<District>? district,
-    List<Province>? pronvince,
-  }) {
+  CRUDDistrictState copyWith(
+      {List<ProvinceDistrict>? listProvinceDistrict,
+      List<String>? listProvinceName,
+      String? district,
+      String? flagActive,
+      String? province}) {
     return CRUDDistrictState(
+      listProvinceDistrict: listProvinceDistrict ?? this.listProvinceDistrict,
       district: district ?? this.district,
-      pronvince: pronvince ?? this.pronvince,
+      flagActive: flagActive ?? this.flagActive,
+      listProvinceName: listProvinceName ?? this.listProvinceName,
+      province: province ?? this.province,
     );
   }
 }
